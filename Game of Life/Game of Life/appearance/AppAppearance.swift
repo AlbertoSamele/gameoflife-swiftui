@@ -15,5 +15,15 @@ struct AppAppearance {
       weight: .regular,
       design: .default
     )
+    static let semibold_35 = Font.system(
+      size: 35,
+      weight: .semibold,
+      design: .default
+    )
+  }
+  
+  struct Spacing {
+    /// 5 pt
+    static let small: CGFloat = 5
   }
 }

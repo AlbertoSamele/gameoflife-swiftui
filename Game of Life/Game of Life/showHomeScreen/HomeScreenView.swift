@@ -10,15 +10,26 @@ struct HomeScreenView: View {
   // MARK: - Body
   
   var body: some View {
-    VStack {
-      ForEach(interactor.data.buttons, id: \.self) { button in
-        ActionButton(
-          title: button.title,
-          onTap: {
-            interactor.triggerAction(of: button)
-          }
-        )
-          .frame(width: 160, height: 40)
+    ZStack {
+      VStack(spacing: 0) {
+        ForEach(["Game", "of", "Life"], id: \.self) { text in
+          Text(text)
+            .font(AppAppearance.Fonts.semibold_35)
+        }
+        Spacer()
+      }
+      .padding(.top, AppAppearance.Spacing.small)
+      
+      VStack {
+        ForEach(interactor.data.buttons, id: \.self) { button in
+          ActionButton(
+            title: button.title,
+            onTap: {
+              interactor.triggerAction(of: button)
+            }
+          )
+            .frame(width: 160, height: 40)
+        }
       }
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -51,6 +62,8 @@ private extension HomeScreenView {
         Text(title)
           .foregroundColor(color)
           .font(AppAppearance.Fonts.regular_16)
+          .frame(maxWidth: .infinity, maxHeight: .infinity)
+          .contentShape(Rectangle())
       }
       .buttonStyle(StaticButtonStyle())
       .frame(maxWidth: .infinity, maxHeight: .infinity)
