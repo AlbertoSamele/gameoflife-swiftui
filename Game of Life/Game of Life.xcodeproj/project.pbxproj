@@ -13,6 +13,9 @@
 		210FD04128C538BA00BBE052 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 210FD04028C538BA00BBE052 /* Preview Assets.xcassets */; };
 		210FD04928C5420C00BBE052 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FD04828C5420C00BBE052 /* HomeScreenView.swift */; };
 		210FD04C28C5448800BBE052 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FD04B28C5448800BBE052 /* AppAppearance.swift */; };
+		210FD04F28C54C1E00BBE052 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FD04E28C54C1E00BBE052 /* HomeInteractor.swift */; };
+		210FD05128C54C5000BBE052 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FD05028C54C5000BBE052 /* HomeViewModel.swift */; };
+		210FD05428C54D1E00BBE052 /* Environment+Accessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FD05328C54D1E00BBE052 /* Environment+Accessory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		210FD04028C538BA00BBE052 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		210FD04828C5420C00BBE052 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		210FD04B28C5448800BBE052 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
+		210FD04E28C54C1E00BBE052 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		210FD05028C54C5000BBE052 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		210FD05328C54D1E00BBE052 /* Environment+Accessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+Accessory.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				210FD03928C538BA00BBE052 /* Game_of_LifeApp.swift */,
+				210FD05228C54D0B00BBE052 /* state */,
 				210FD04A28C5447300BBE052 /* appearance */,
 				210FD04728C541C400BBE052 /* showHomeScreen */,
 				210FD03B28C538BA00BBE052 /* ContentView.swift */,
@@ -77,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				210FD04828C5420C00BBE052 /* HomeScreenView.swift */,
+				210FD04E28C54C1E00BBE052 /* HomeInteractor.swift */,
+				210FD05028C54C5000BBE052 /* HomeViewModel.swift */,
 			);
 			path = showHomeScreen;
 			sourceTree = "<group>";
@@ -87,6 +96,14 @@
 				210FD04B28C5448800BBE052 /* AppAppearance.swift */,
 			);
 			path = appearance;
+			sourceTree = "<group>";
+		};
+		210FD05228C54D0B00BBE052 /* state */ = {
+			isa = PBXGroup;
+			children = (
+				210FD05328C54D1E00BBE052 /* Environment+Accessory.swift */,
+			);
+			path = state;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,8 +177,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				210FD04928C5420C00BBE052 /* HomeScreenView.swift in Sources */,
+				210FD05128C54C5000BBE052 /* HomeViewModel.swift in Sources */,
+				210FD05428C54D1E00BBE052 /* Environment+Accessory.swift in Sources */,
 				210FD03C28C538BA00BBE052 /* ContentView.swift in Sources */,
 				210FD03A28C538BA00BBE052 /* Game_of_LifeApp.swift in Sources */,
+				210FD04F28C54C1E00BBE052 /* HomeInteractor.swift in Sources */,
 				210FD04C28C5448800BBE052 /* AppAppearance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
