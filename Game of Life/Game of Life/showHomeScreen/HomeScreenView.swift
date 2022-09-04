@@ -46,7 +46,7 @@ private extension HomeScreenView {
           .foregroundColor(color)
           .font(AppAppearance.Fonts.regular_16)
       }
-      .buttonStyle(.plain)
+      .buttonStyle(StaticButtonStyle())
       .frame(maxWidth: .infinity, maxHeight: .infinity)
       .border(color, width: 2)
     }
