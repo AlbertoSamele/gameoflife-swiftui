@@ -21,7 +21,7 @@ struct HomeScreenView: View {
       .padding(.top, AppAppearance.Spacing.small)
       
       VStack {
-        ForEach(interactor.data.buttons, id: \.self) { button in
+        ForEach(interactor.viewModel.buttons, id: \.self) { button in
           ActionButton(
             title: button.title,
             onTap: {
