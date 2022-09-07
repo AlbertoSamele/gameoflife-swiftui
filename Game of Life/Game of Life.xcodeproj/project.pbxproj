@@ -21,6 +21,8 @@
 		219240B928C917C400EFC6B0 /* Router+AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219240B828C917C400EFC6B0 /* Router+AppRouter.swift */; };
 		21BEC8B228C6B25000A94481 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BEC8B128C6B25000A94481 /* AppState.swift */; };
 		21BEC8B428C6B84F00A94481 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BEC8B328C6B84F00A94481 /* Router.swift */; };
+		21BEC8B728C6BC7B00A94481 /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BEC8B628C6BC7B00A94481 /* SettingsScreenView.swift */; };
+		21BEC8B928C6BCAE00A94481 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BEC8B828C6BCAE00A94481 /* SettingsInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		219240B828C917C400EFC6B0 /* Router+AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+AppRouter.swift"; sourceTree = "<group>"; };
 		21BEC8B128C6B25000A94481 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		21BEC8B328C6B84F00A94481 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		21BEC8B628C6BC7B00A94481 /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
+		21BEC8B828C6BCAE00A94481 /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,15 @@
 			path = globalState;
 			sourceTree = "<group>";
 		};
+		21BEC8B528C6BC6400A94481 /* showSettings */ = {
+			isa = PBXGroup;
+			children = (
+				21BEC8B628C6BC7B00A94481 /* SettingsScreenView.swift */,
+				21BEC8B828C6BCAE00A94481 /* SettingsInteractor.swift */,
+			);
+			path = showSettings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -239,7 +252,9 @@
 				210FD03C28C538BA00BBE052 /* RootView.swift in Sources */,
 				21BEC8B228C6B25000A94481 /* AppState.swift in Sources */,
 				219240B528C9057700EFC6B0 /* Navigation.swift in Sources */,
+				21BEC8B928C6BCAE00A94481 /* SettingsInteractor.swift in Sources */,
 				219240B928C917C400EFC6B0 /* Router+AppRouter.swift in Sources */,
+				21BEC8B728C6BC7B00A94481 /* SettingsScreenView.swift in Sources */,
 				210FD05828C5557C00BBE052 /* StaticButtonStyle.swift in Sources */,
 				210FD03A28C538BA00BBE052 /* Game_of_LifeApp.swift in Sources */,
 				210FD04F28C54C1E00BBE052 /* HomeInteractor.swift in Sources */,
