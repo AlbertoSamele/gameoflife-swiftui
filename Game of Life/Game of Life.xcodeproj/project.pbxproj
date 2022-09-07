@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		210FD03A28C538BA00BBE052 /* Game_of_LifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FD03928C538BA00BBE052 /* Game_of_LifeApp.swift */; };
-		210FD03C28C538BA00BBE052 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FD03B28C538BA00BBE052 /* ContentView.swift */; };
+		210FD03C28C538BA00BBE052 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FD03B28C538BA00BBE052 /* RootView.swift */; };
 		210FD03E28C538BA00BBE052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 210FD03D28C538BA00BBE052 /* Assets.xcassets */; };
 		210FD04128C538BA00BBE052 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 210FD04028C538BA00BBE052 /* Preview Assets.xcassets */; };
 		210FD04928C5420C00BBE052 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FD04828C5420C00BBE052 /* HomeScreenView.swift */; };
@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		210FD03628C538BA00BBE052 /* Game of Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game of Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		210FD03928C538BA00BBE052 /* Game_of_LifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_of_LifeApp.swift; sourceTree = "<group>"; };
-		210FD03B28C538BA00BBE052 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		210FD03B28C538BA00BBE052 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		210FD03D28C538BA00BBE052 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		210FD04028C538BA00BBE052 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		210FD04828C5420C00BBE052 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -76,12 +76,12 @@
 			isa = PBXGroup;
 			children = (
 				210FD03928C538BA00BBE052 /* Game_of_LifeApp.swift */,
+				210FD03B28C538BA00BBE052 /* RootView.swift */,
 				219240BC28C9195500EFC6B0 /* modules */,
 				219240BB28C9193500EFC6B0 /* navigation */,
 				21BEC8B028C6B23E00A94481 /* globalState */,
 				210FD05528C5555000BBE052 /* genericViews */,
 				210FD04A28C5447300BBE052 /* appearance */,
-				210FD03B28C538BA00BBE052 /* ContentView.swift */,
 				210FD03D28C538BA00BBE052 /* Assets.xcassets */,
 				210FD03F28C538BA00BBE052 /* Preview Content */,
 			);
@@ -247,7 +247,6 @@
 			files = (
 				210FD04928C5420C00BBE052 /* HomeScreenView.swift in Sources */,
 				210FD05128C54C5000BBE052 /* HomeViewModel.swift in Sources */,
-				210FD03C28C538BA00BBE052 /* ContentView.swift in Sources */,
 				21BEC8B428C6B84F00A94481 /* Router.swift in Sources */,
 				210FD03C28C538BA00BBE052 /* RootView.swift in Sources */,
 				21BEC8B228C6B25000A94481 /* AppState.swift in Sources */,
