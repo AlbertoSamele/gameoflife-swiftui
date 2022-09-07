@@ -34,11 +34,14 @@ protocol RouteType { }
 protocol Navigatable {
   var size: CGSize { get }
   
-  var rootState: State<RouteType> { get }
-  var rootTransformsState: State<NavigatableTransforms> { get }
+  var rootState: State<RouteType> { get set }
+  var rootTransformsState: State<NavigatableTransforms> { get set }
   
-  var overimposedRootState: State<RouteType?> { get }
-  var overimposedTransformsState: State<NavigatableTransforms> { get }
+  var overimposedRootState: State<RouteType?> { get set }
+  var overimposedTransformsState: State<NavigatableTransforms> { get set }
+  
+  var underimposedRootState: State<RouteType?> { get set }
+  var underimposedTransformsState: State<NavigatableTransforms> { get set }
 }
 
 protocol Navigator {

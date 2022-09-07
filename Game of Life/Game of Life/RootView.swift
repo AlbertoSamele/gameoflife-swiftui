@@ -16,6 +16,10 @@ struct RootView: View {
   @StateObject
   var appState: AppState = .init()
   @State
+  var underimposedRoot: RouteType? = nil
+  @State
+  var underimposedTransforms: NavigatableTransforms = .identity()
+  @State
   var root: RouteType = Route.home
   @State
   var rootTransforms: NavigatableTransforms = .identity()
@@ -28,6 +32,12 @@ struct RootView: View {
   
   var body: some View {
     ZStack {
+      if let underimposedRoot = underimposedRoot {
+        createView(for: underimposedRoot)
+          .frame(maxWidth: .infinity, maxHeight: .infinity)
+          .offset(x: underimposedTransforms.x, y: underimposedTransforms.y)
+      }
+      
       createView(for: root)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .offset(x: rootTransforms.x, y: rootTransforms.y)
@@ -111,6 +121,16 @@ extension RootView: Navigatable {
   var overimposedTransformsState: State<NavigatableTransforms> {
     get { _overimposedTransforms }
     set { _overimposedTransforms = newValue }
+  }
+  
+  var underimposedRootState: State<RouteType?> {
+    get { _underimposedRoot }
+    set { _underimposedRoot = newValue }
+  }
+  
+  var underimposedTransformsState: State<NavigatableTransforms> {
+    get { _underimposedTransforms }
+    set { _underimposedTransforms = newValue }
   }
 }
 
