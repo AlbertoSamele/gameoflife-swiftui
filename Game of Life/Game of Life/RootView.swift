@@ -18,11 +18,11 @@ struct RootView: View {
   @State
   var root: RouteType = Route.home
   @State
-  var rootOffset: NavigatableTransforms = .identity()
+  var rootTransforms: NavigatableTransforms = .identity()
   @State
-  var willBeRoot: RouteType? = nil
+  var overimposedRoot: RouteType? = nil
   @State
-  var willBeRootOffset: NavigatableTransforms = .identity()
+  var overimposedTransforms: NavigatableTransforms = .identity()
   
   // MARK: - Body
   
@@ -30,12 +30,12 @@ struct RootView: View {
     ZStack {
       createView(for: root)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .offset(x: rootOffset.x, y: rootOffset.y)
+        .offset(x: rootTransforms.x, y: rootTransforms.y)
       
-      if let willBeRoot = willBeRoot {
-        createView(for: willBeRoot)
+      if let overimposedRoot = overimposedRoot {
+        createView(for: overimposedRoot)
           .frame(maxWidth: .infinity, maxHeight: .infinity)
-          .offset(x: willBeRootOffset.x, y: willBeRootOffset.y)
+          .offset(x: overimposedTransforms.x, y: overimposedTransforms.y)
       }
     }
     .onChange(of: appState.router.currentRoute) { newRoute in
@@ -98,19 +98,19 @@ extension RootView: Navigatable {
     set { _root = newValue }
   }
   
-  var rootOffsetState: State<NavigatableTransforms> {
-    get { _rootOffset }
-    set { _rootOffset = newValue }
+  var rootTransformsState: State<NavigatableTransforms> {
+    get { _rootTransforms }
+    set { _rootTransforms = newValue }
   }
   
-  var willBeRootState: State<RouteType?> {
-    get { _willBeRoot }
-    set { _willBeRoot = newValue }
+  var overimposedRootState: State<RouteType?> {
+    get { _overimposedRoot }
+    set { _overimposedRoot = newValue }
   }
   
-  var willBeRootOffsetState: State<NavigatableTransforms> {
-    get { _willBeRootOffset }
-    set { _willBeRootOffset = newValue }
+  var overimposedTransformsState: State<NavigatableTransforms> {
+    get { _overimposedTransforms }
+    set { _overimposedTransforms = newValue }
   }
 }
 

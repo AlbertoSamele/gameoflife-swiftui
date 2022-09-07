@@ -35,10 +35,10 @@ protocol Navigatable {
   var size: CGSize { get }
   
   var rootState: State<RouteType> { get }
-  var rootOffsetState: State<NavigatableTransforms> { get }
+  var rootTransformsState: State<NavigatableTransforms> { get }
   
-  var willBeRootState: State<RouteType?> { get }
-  var willBeRootOffsetState: State<NavigatableTransforms> { get }
+  var overimposedRootState: State<RouteType?> { get }
+  var overimposedTransformsState: State<NavigatableTransforms> { get }
 }
 
 protocol Navigator {
