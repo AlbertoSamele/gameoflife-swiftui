@@ -72,11 +72,11 @@
 			isa = PBXGroup;
 			children = (
 				210FD03928C538BA00BBE052 /* Game_of_LifeApp.swift */,
+				219240BC28C9195500EFC6B0 /* modules */,
 				219240BB28C9193500EFC6B0 /* navigation */,
 				21BEC8B028C6B23E00A94481 /* globalState */,
 				210FD05528C5555000BBE052 /* genericViews */,
 				210FD04A28C5447300BBE052 /* appearance */,
-				210FD04728C541C400BBE052 /* showHomeScreen */,
 				210FD03B28C538BA00BBE052 /* ContentView.swift */,
 				210FD03D28C538BA00BBE052 /* Assets.xcassets */,
 				210FD03F28C538BA00BBE052 /* Preview Content */,
@@ -142,6 +142,15 @@
 				219240B628C9074000EFC6B0 /* NavigationHandler+NativeNavigation.swift */,
 			);
 			path = navigation;
+			sourceTree = "<group>";
+		};
+		219240BC28C9195500EFC6B0 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				210FD04728C541C400BBE052 /* showHomeScreen */,
+				21BEC8B528C6BC6400A94481 /* showSettings */,
+			);
+			path = modules;
 			sourceTree = "<group>";
 		};
 		21BEC8B028C6B23E00A94481 /* globalState */ = {

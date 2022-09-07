@@ -102,7 +102,11 @@ private extension HomeScreenView {
 struct HomeScreenView_Previews: PreviewProvider {
   static var previews: some View {
     HomeScreenView(
-      interactor: HomeInteractor()
+      interactor: .init(
+        appState: .init(
+          initialRoute: .home
+        )
+      )
     )
   }
 }
