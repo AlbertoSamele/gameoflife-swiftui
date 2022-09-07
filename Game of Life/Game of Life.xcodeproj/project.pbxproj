@@ -16,6 +16,11 @@
 		210FD04F28C54C1E00BBE052 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FD04E28C54C1E00BBE052 /* HomeInteractor.swift */; };
 		210FD05128C54C5000BBE052 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FD05028C54C5000BBE052 /* HomeViewModel.swift */; };
 		210FD05828C5557C00BBE052 /* StaticButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FD05728C5557C00BBE052 /* StaticButtonStyle.swift */; };
+		219240B528C9057700EFC6B0 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219240B428C9057700EFC6B0 /* Navigation.swift */; };
+		219240B728C9074000EFC6B0 /* NavigationHandler+NativeNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219240B628C9074000EFC6B0 /* NavigationHandler+NativeNavigation.swift */; };
+		219240B928C917C400EFC6B0 /* Router+AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219240B828C917C400EFC6B0 /* Router+AppRouter.swift */; };
+		21BEC8B228C6B25000A94481 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BEC8B128C6B25000A94481 /* AppState.swift */; };
+		21BEC8B428C6B84F00A94481 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BEC8B328C6B84F00A94481 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,11 @@
 		210FD04E28C54C1E00BBE052 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		210FD05028C54C5000BBE052 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		210FD05728C5557C00BBE052 /* StaticButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticButtonStyle.swift; sourceTree = "<group>"; };
+		219240B428C9057700EFC6B0 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		219240B628C9074000EFC6B0 /* NavigationHandler+NativeNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationHandler+NativeNavigation.swift"; sourceTree = "<group>"; };
+		219240B828C917C400EFC6B0 /* Router+AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+AppRouter.swift"; sourceTree = "<group>"; };
+		21BEC8B128C6B25000A94481 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		21BEC8B328C6B84F00A94481 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				210FD03928C538BA00BBE052 /* Game_of_LifeApp.swift */,
+				219240BB28C9193500EFC6B0 /* navigation */,
+				21BEC8B028C6B23E00A94481 /* globalState */,
 				210FD05528C5555000BBE052 /* genericViews */,
 				210FD04A28C5447300BBE052 /* appearance */,
 				210FD04728C541C400BBE052 /* showHomeScreen */,
@@ -112,6 +124,33 @@
 				210FD05728C5557C00BBE052 /* StaticButtonStyle.swift */,
 			);
 			path = buttons;
+			sourceTree = "<group>";
+		};
+		219240BA28C9191800EFC6B0 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				21BEC8B328C6B84F00A94481 /* Router.swift */,
+				219240B828C917C400EFC6B0 /* Router+AppRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		219240BB28C9193500EFC6B0 /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				219240B428C9057700EFC6B0 /* Navigation.swift */,
+				219240B628C9074000EFC6B0 /* NavigationHandler+NativeNavigation.swift */,
+			);
+			path = navigation;
+			sourceTree = "<group>";
+		};
+		21BEC8B028C6B23E00A94481 /* globalState */ = {
+			isa = PBXGroup;
+			children = (
+				21BEC8B128C6B25000A94481 /* AppState.swift */,
+				219240BA28C9191800EFC6B0 /* router */,
+			);
+			path = globalState;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,9 +226,15 @@
 				210FD04928C5420C00BBE052 /* HomeScreenView.swift in Sources */,
 				210FD05128C54C5000BBE052 /* HomeViewModel.swift in Sources */,
 				210FD03C28C538BA00BBE052 /* ContentView.swift in Sources */,
+				21BEC8B428C6B84F00A94481 /* Router.swift in Sources */,
+				210FD03C28C538BA00BBE052 /* RootView.swift in Sources */,
+				21BEC8B228C6B25000A94481 /* AppState.swift in Sources */,
+				219240B528C9057700EFC6B0 /* Navigation.swift in Sources */,
+				219240B928C917C400EFC6B0 /* Router+AppRouter.swift in Sources */,
 				210FD05828C5557C00BBE052 /* StaticButtonStyle.swift in Sources */,
 				210FD03A28C538BA00BBE052 /* Game_of_LifeApp.swift in Sources */,
 				210FD04F28C54C1E00BBE052 /* HomeInteractor.swift in Sources */,
+				219240B728C9074000EFC6B0 /* NavigationHandler+NativeNavigation.swift in Sources */,
 				210FD04C28C5448800BBE052 /* AppAppearance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
