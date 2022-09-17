@@ -6,6 +6,8 @@ class AppState: ObservableObject {
   
   @Published
   var router: Router
+  @Published
+  var settings: Settings = .init()
   
   // MARK: - Inits
   

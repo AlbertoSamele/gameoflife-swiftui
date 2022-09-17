@@ -10,9 +10,19 @@ struct AppAppearance {
   }
   
   struct Fonts {
+    static let light_13 = Font.system(
+      size: 13,
+      weight: .light,
+      design: .default
+    )
     static let regular_16 = Font.system(
       size: 16,
       weight: .regular,
+      design: .default
+    )
+    static let medium_18 = Font.system(
+      size: 18,
+      weight: .medium,
       design: .default
     )
     static let semibold_35 = Font.system(
@@ -23,7 +33,13 @@ struct AppAppearance {
   }
   
   struct Spacing {
+    /// 2.5 pt
+    static let extraSmall: CGFloat = 2.5
     /// 5 pt
     static let small: CGFloat = 5
+    /// 15 pt
+    static let medium: CGFloat = 15
+    /// 25 pt
+    static let large: CGFloat = 20
   }
 }
