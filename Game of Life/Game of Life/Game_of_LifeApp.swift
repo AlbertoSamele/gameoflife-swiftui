@@ -4,7 +4,7 @@ import SwiftUI
 struct Game_of_LifeApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      RootView()
     }
   }
 }

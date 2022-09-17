@@ -5,23 +5,27 @@ class HomeInteractor: ObservableObject {
   
   @Published
   var viewModel: HomeViewModel
+  @Published
+  private var appState: AppState
   
   // MARK: - Inits
   
   init(
+    appState: AppState,
     viewModelFactory: HomeViewModelFactory = ConcreteHomeViewModelFactory()
   ) {
+    self.appState = appState
     viewModel = viewModelFactory.create()
   }
   
   // MARK: - Public methods
   
   func triggerAction(of button: HomeViewModel.ButtonData) {
-    
+    appState.router.push(.settings)
   }
 }
 
-// MARK: - Factory methods
+// MARK: - ViewModel factory
 
 private class ConcreteHomeViewModelFactory: HomeViewModelFactory {
   func create() -> HomeViewModel {
