@@ -37,11 +37,9 @@ struct HomeScreenView: View {
   }
 }
 
-// MARK: - HomeScreenView+UI
+// MARK: - HomeScreenView+ActionButton
 
 private extension HomeScreenView {
-  // MARK: - ActionButton
-  
   struct ActionButton: View {
     // MARK: - Datasoure properties
     
@@ -89,7 +87,7 @@ private extension HomeScreenView {
         yOffset = 0
       }
       
-      DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration*1.2) {
         isAnimating = false
         onTap()
       }
