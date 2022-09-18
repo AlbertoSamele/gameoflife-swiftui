@@ -40,6 +40,10 @@ private struct ConcreteSettingsViewModelFactory: SettingsViewModelFactory {
         speed: settings.speed,
         maxSpeed: 10,
         minSpeed: 1
+      ),
+      particleEffect: Bundle.main.url(
+        forResource: "particle-effect",
+        withExtension: ".mp4"
       )
     )
   }

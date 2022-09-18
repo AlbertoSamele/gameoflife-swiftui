@@ -18,5 +18,6 @@ struct SettingsViewModel {
   
   var grid: GridMetadata
   var speed: SpeedMetadata
+  let particleEffect: URL?
 }
 

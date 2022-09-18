@@ -10,7 +10,10 @@ struct SettingsScreenView: View {
   // MARK: - Body
   
   var body: some View {
-    VStack {
+    ZStack(alignment: .top) {
+      PlayerView(url: interactor.viewModel.particleEffect)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+      
       ZStack(alignment: .leading) {
         Button(action: onBackButtonTapped)  {
           Image("back-arrow")
@@ -25,7 +28,6 @@ struct SettingsScreenView: View {
       }
       .padding(.horizontal, AppAppearance.Spacing.large)
       .padding(.top, AppAppearance.Spacing.small)
-      .frame(maxWidth: .infinity, alignment: .leading)
       
       VStack(alignment: .leading, spacing: AppAppearance.Spacing.large) {
         slider(
@@ -42,8 +44,6 @@ struct SettingsScreenView: View {
         )
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity)
-      
-      Spacer()
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(AppAppearance.Colors.color_ffffff)

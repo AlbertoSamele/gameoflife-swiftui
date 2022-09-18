@@ -11,6 +11,9 @@ struct HomeScreenView: View {
   
   var body: some View {
     ZStack {
+      PlayerView(url: interactor.viewModel.particleEffect)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+      
       VStack(spacing: 0) {
         ForEach(["Game", "of", "Life"], id: \.self) { text in
           Text(text)
@@ -28,7 +31,7 @@ struct HomeScreenView: View {
               interactor.triggerAction(of: button)
             }
           )
-            .frame(width: 160, height: 40)
+          .frame(width: 160, height: 40)
         }
       }
     }
@@ -65,6 +68,7 @@ private extension HomeScreenView {
       }
       .buttonStyle(StaticButtonStyle())
       .frame(maxWidth: .infinity, maxHeight: .infinity)
+      .background(AppAppearance.Colors.color_ffffff)
       .border(color, width: 2)
       .offset(x: 0, y: yOffset)
     }
