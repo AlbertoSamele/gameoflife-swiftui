@@ -17,6 +17,7 @@
 		210FD05128C54C5000BBE052 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FD05028C54C5000BBE052 /* HomeViewModel.swift */; };
 		210FD05828C5557C00BBE052 /* StaticButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FD05728C5557C00BBE052 /* StaticButtonStyle.swift */; };
 		2126BCBC28D7CA4E006BE026 /* particle-effect.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2126BCBB28D7CA4E006BE026 /* particle-effect.mp4 */; };
+		2126BCBE28D7D012006BE026 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2126BCBD28D7D012006BE026 /* PlayerView.swift */; };
 		2159158628CFDEE9007EA08B /* AppState+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159158528CFDEE9007EA08B /* AppState+Settings.swift */; };
 		2159158828CFE1D4007EA08B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159158728CFE1D4007EA08B /* SettingsViewModel.swift */; };
 		219240B528C9057700EFC6B0 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219240B428C9057700EFC6B0 /* Navigation.swift */; };
@@ -40,6 +41,7 @@
 		210FD05028C54C5000BBE052 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		210FD05728C5557C00BBE052 /* StaticButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticButtonStyle.swift; sourceTree = "<group>"; };
 		2126BCBB28D7CA4E006BE026 /* particle-effect.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "particle-effect.mp4"; sourceTree = "<group>"; };
+		2126BCBD28D7D012006BE026 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		2159158528CFDEE9007EA08B /* AppState+Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppState+Settings.swift"; sourceTree = "<group>"; };
 		2159158728CFE1D4007EA08B /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		219240B428C9057700EFC6B0 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				210FD05628C5556E00BBE052 /* buttons */,
+				2126BCBD28D7D012006BE026 /* PlayerView.swift */,
 			);
 			path = genericViews;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				210FD05128C54C5000BBE052 /* HomeViewModel.swift in Sources */,
 				21BEC8B428C6B84F00A94481 /* Router.swift in Sources */,
 				210FD03C28C538BA00BBE052 /* RootView.swift in Sources */,
+				2126BCBE28D7D012006BE026 /* PlayerView.swift in Sources */,
 				21BEC8B228C6B25000A94481 /* AppState.swift in Sources */,
 				219240B528C9057700EFC6B0 /* Navigation.swift in Sources */,
 				21BEC8B928C6BCAE00A94481 /* SettingsInteractor.swift in Sources */,
