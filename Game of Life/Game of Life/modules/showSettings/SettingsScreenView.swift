@@ -133,7 +133,7 @@ private extension SettingsScreenView {
       }
       
       let dragProgress = abs(offset) / viewWidth
-      let dragMultiplier = offset < 0 ? 2 : 1
+      let dragMultiplier = offset < 0 ? -1 : 1
       let dragDelta = dragProgress * Double(max - min)
       let newValue = (initialDragValue ?? 0) + dragMultiplier*Int(dragDelta)
       
