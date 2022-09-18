@@ -27,12 +27,21 @@ struct SettingsScreenView: View {
       .padding(.top, AppAppearance.Spacing.small)
       .frame(maxWidth: .infinity, alignment: .leading)
       
-      Slider(
-        value: $interactor.viewModel.grid.size,
-        min: interactor.viewModel.grid.minSize,
-        max: interactor.viewModel.grid.maxSize
-      )
-      .frame(width: 250)
+      VStack(alignment: .leading, spacing: AppAppearance.Spacing.large) {
+        slider(
+          title: "Grid size",
+          value: $interactor.viewModel.grid.size,
+          minValue: interactor.viewModel.grid.minSize,
+          maxValue: interactor.viewModel.grid.maxSize
+        )
+        slider(
+          title: "Speed",
+          value: $interactor.viewModel.speed.speed,
+          minValue: interactor.viewModel.speed.minSpeed,
+          maxValue: interactor.viewModel.speed.maxSpeed
+        )
+      }
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
       
       Spacer()
     }
@@ -44,6 +53,28 @@ struct SettingsScreenView: View {
   
   private func onBackButtonTapped() {
     interactor.closeSettings()
+  }
+  
+  @ViewBuilder
+  private func slider(
+    title: String,
+    value: Binding<Int>,
+    minValue: Int,
+    maxValue: Int
+  ) -> some View {
+    HStack() {
+      Text(title)
+        .font(AppAppearance.Fonts.regular_16)
+        .offset(y: -7)
+      Spacer()
+      Slider(
+        value: value,
+        min: minValue,
+        max: maxValue
+      )
+      .frame(width: 250, height: 46)
+    }
+    .frame(width: 340)
   }
 }
 
@@ -102,7 +133,7 @@ private extension SettingsScreenView {
       }
       
       let dragProgress = abs(offset) / viewWidth
-      let dragMultiplier = offset < 0 ? -1 : 1
+      let dragMultiplier = offset < 0 ? 2 : 1
       let dragDelta = dragProgress * Double(max - min)
       let newValue = (initialDragValue ?? 0) + dragMultiplier*Int(dragDelta)
       

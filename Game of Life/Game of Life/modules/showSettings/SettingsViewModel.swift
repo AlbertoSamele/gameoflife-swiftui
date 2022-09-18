@@ -10,7 +10,13 @@ struct SettingsViewModel {
     let maxSize: Int
     let minSize: Int
   }
+  struct SpeedMetadata {
+    var speed: Int
+    let maxSpeed: Int
+    let minSpeed: Int
+  }
   
   var grid: GridMetadata
+  var speed: SpeedMetadata
 }
 

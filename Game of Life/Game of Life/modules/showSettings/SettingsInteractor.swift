@@ -29,6 +29,11 @@ private struct ConcreteSettingsViewModelFactory: SettingsViewModelFactory {
         size: settings.gridSize,
         maxSize: 90,
         minSize: 15
+      ),
+      speed: .init(
+        speed: settings.speed,
+        maxSpeed: 10,
+        minSpeed: 1
       )
     )
   }
