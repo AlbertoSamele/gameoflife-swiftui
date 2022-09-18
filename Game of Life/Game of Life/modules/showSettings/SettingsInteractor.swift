@@ -18,6 +18,10 @@ class SettingsInteractor: ObservableObject {
   }
   
   func closeSettings() {
+    appState.settings = .init(
+      gridSize: viewModel.grid.size,
+      speed: viewModel.speed.speed
+    )
     appState.router.pop()
   }
 }
