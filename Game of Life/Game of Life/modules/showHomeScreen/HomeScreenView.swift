@@ -91,7 +91,7 @@ private extension HomeScreenView {
         yOffset = 0
       }
       
-      DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration*1.2) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration*1.25) {
         isAnimating = false
         onTap()
       }

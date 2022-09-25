@@ -27,6 +27,9 @@
 		21BEC8B428C6B84F00A94481 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BEC8B328C6B84F00A94481 /* Router.swift */; };
 		21BEC8B728C6BC7B00A94481 /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BEC8B628C6BC7B00A94481 /* SettingsScreenView.swift */; };
 		21BEC8B928C6BCAE00A94481 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BEC8B828C6BCAE00A94481 /* SettingsInteractor.swift */; };
+		21FAAEEF28D9246C00F58B3A /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAAEEE28D9246C00F58B3A /* GameView.swift */; };
+		21FAAEF128D924E700F58B3A /* GameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAAEF028D924E700F58B3A /* GameInteractor.swift */; };
+		21FAAEF528D926AF00F58B3A /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAAEF428D926AF00F58B3A /* GameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,9 @@
 		21BEC8B328C6B84F00A94481 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		21BEC8B628C6BC7B00A94481 /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
 		21BEC8B828C6BCAE00A94481 /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		21FAAEEE28D9246C00F58B3A /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		21FAAEF028D924E700F58B3A /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
+		21FAAEF428D926AF00F58B3A /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,7 @@
 		219240BC28C9195500EFC6B0 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				21FAAEED28D9243C00F58B3A /* startGame */,
 				210FD04728C541C400BBE052 /* showHomeScreen */,
 				21BEC8B528C6BC6400A94481 /* showSettings */,
 			);
@@ -193,6 +200,16 @@
 				2159158728CFE1D4007EA08B /* SettingsViewModel.swift */,
 			);
 			path = showSettings;
+			sourceTree = "<group>";
+		};
+		21FAAEED28D9243C00F58B3A /* startGame */ = {
+			isa = PBXGroup;
+			children = (
+				21FAAEEE28D9246C00F58B3A /* GameView.swift */,
+				21FAAEF028D924E700F58B3A /* GameInteractor.swift */,
+				21FAAEF428D926AF00F58B3A /* GameViewModel.swift */,
+			);
+			path = startGame;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,10 +285,13 @@
 			files = (
 				210FD04928C5420C00BBE052 /* HomeScreenView.swift in Sources */,
 				210FD05128C54C5000BBE052 /* HomeViewModel.swift in Sources */,
+				21FAAEF128D924E700F58B3A /* GameInteractor.swift in Sources */,
+				21FAAEEF28D9246C00F58B3A /* GameView.swift in Sources */,
 				21BEC8B428C6B84F00A94481 /* Router.swift in Sources */,
 				210FD03C28C538BA00BBE052 /* RootView.swift in Sources */,
 				2126BCBE28D7D012006BE026 /* PlayerView.swift in Sources */,
 				21BEC8B228C6B25000A94481 /* AppState.swift in Sources */,
+				21FAAEF528D926AF00F58B3A /* GameViewModel.swift in Sources */,
 				219240B528C9057700EFC6B0 /* Navigation.swift in Sources */,
 				21BEC8B928C6BCAE00A94481 /* SettingsInteractor.swift in Sources */,
 				219240B928C917C400EFC6B0 /* Router+AppRouter.swift in Sources */,

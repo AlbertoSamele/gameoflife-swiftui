@@ -21,18 +21,32 @@ class HomeInteractor: ObservableObject {
   // MARK: - Public methods
   
   func triggerAction(of button: HomeViewModel.ButtonData) {
-    appState.router.push(.settings)
+    button.handler()
+  }
+  
+  // MARK: - Private methods
+  
+  private func startGame() {
+    appState.router.push(.game)
+  }
+  
+  private func showSettings() {
+    appState.router.push(.game)
   }
 }
 
 // MARK: - ViewModel factory
 
-private class ConcreteHomeViewModelFactory: HomeViewModelFactory {
+private struct ConcreteHomeViewModelFactory: HomeViewModelFactory {
+  var buttonsFactory = HomeViewModel.ButtonDataFactory()
+  let onStartGame: () -> Void
+  let onShowSettings: () -> Void
+  
   func create() -> HomeViewModel {
     .init(
       buttons: [
-        .init(title: "Start"),
-        .init(title: "Settings")
+        buttonsFactory.create(.start, handler: onStartGame),
+        buttonsFactory.create(.settings, handler: onShowSettings)
       ],
       particleEffect: Bundle.main.url(
         forResource: "particle-effect",

@@ -3,6 +3,7 @@ import Foundation
 enum Route: Equatable {
   case home
   case settings
+  case game
 }
 
 enum PresentationMode: Equatable {
