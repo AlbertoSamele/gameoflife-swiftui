@@ -33,7 +33,11 @@ private class ConcreteHomeViewModelFactory: HomeViewModelFactory {
       buttons: [
         .init(title: "Start"),
         .init(title: "Settings")
-      ]
+      ],
+      particleEffect: Bundle.main.url(
+        forResource: "particle-effect",
+        withExtension: ".mp4"
+      )
     )
   }
 }

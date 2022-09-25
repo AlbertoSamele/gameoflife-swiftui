@@ -4,14 +4,11 @@ protocol HomeViewModelFactory {
   func create() -> HomeViewModel
 }
 
-class HomeViewModel: ObservableObject {
+struct HomeViewModel {
   struct ButtonData: Hashable {
     let title: String
   }
   
   let buttons: [ButtonData]
-    
-  init(buttons: [ButtonData]) {
-    self.buttons = buttons
-  }
+  let particleEffect: URL?
 }
