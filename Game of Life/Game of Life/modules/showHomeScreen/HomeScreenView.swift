@@ -11,12 +11,20 @@ struct HomeScreenView: View {
   
   var body: some View {
     ZStack {
-      PlayerView(url: interactor.viewModel.particleEffect)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+      PlayerView(
+        url: Bundle.main.url(
+          forResource: "particle-effect",
+          withExtension: ".mp4"
+        )
+      )
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
       
       VStack(spacing: 0) {
-        ForEach(["Game", "of", "Life"], id: \.self) { text in
-          Text(text)
+        ForEach(
+          interactor.viewModel.content.header.split(separator: " "),
+          id: \.self
+        ) {
+          Text($0)
             .font(AppAppearance.Fonts.semibold_35)
         }
         Spacer()
@@ -24,78 +32,20 @@ struct HomeScreenView: View {
       .padding(.top, AppAppearance.Spacing.small)
       
       VStack {
-        ForEach(interactor.viewModel.buttons, id: \.self) { button in
-          ActionButton(
-            title: button.title,
-            onTap: {
-              interactor.triggerAction(of: button)
-            }
-          )
-          .frame(width: 160, height: 40)
-        }
+        ActionButton(
+          title: interactor.viewModel.content.startPrompt,
+          onTap: interactor.startPlaying
+        )
+        .frame(width: 160, height: 40)
+        ActionButton(
+          title: interactor.viewModel.content.settingsPrompt,
+          onTap: interactor.showSettings
+        )
+        .frame(width: 160, height: 40)
       }
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(AppAppearance.Colors.color_ffffff)
-  }
-}
-
-// MARK: - HomeScreenView+ActionButton
-
-private extension HomeScreenView {
-  struct ActionButton: View {
-    // MARK: - Datasoure properties
-    
-    let title: String
-    let onTap: () -> Void
-    var color: Color = AppAppearance.Colors.color_313031
-    var animationDuration: Double = 0.1
-    var animationOffset: CGFloat = 3
-    @State
-    private var yOffset: CGFloat = 0
-    @State
-    private var isAnimating: Bool = false
-    
-    // MARK: - Body
-    
-    var body: some View {
-      Button(action: onButtonTapped) {
-        Text(title)
-          .foregroundColor(color)
-          .font(AppAppearance.Fonts.regular_16)
-          .frame(maxWidth: .infinity, maxHeight: .infinity)
-          .contentShape(Rectangle())
-      }
-      .buttonStyle(StaticButtonStyle())
-      .frame(maxWidth: .infinity, maxHeight: .infinity)
-      .background(AppAppearance.Colors.color_ffffff)
-      .border(color, width: 2)
-      .offset(x: 0, y: yOffset)
-    }
-    
-    // MARK: - Private methods
-    
-    private func onButtonTapped() {
-      guard !isAnimating else { return }
-      isAnimating = true
-      
-      withAnimation(
-        .easeInOut(duration: animationDuration / 2)
-      ) {
-        yOffset = animationOffset
-      }
-      withAnimation(
-        .easeInOut(duration: animationDuration / 2)
-        .delay(animationDuration / 2)
-      ) {
-        yOffset = 0
-      }
-      
-      DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration*1.25) {
-        isAnimating = false
-        onTap()
-      }
-    }
   }
 }
 
