@@ -4,40 +4,30 @@ class HomeInteractor: ObservableObject {
   // MARK: - Datasource properties
   
   @Published
-  var viewModel: HomeViewModel
+  var viewModel: HomeViewModel!
   @Published
   private var appState: AppState
   
   // MARK: - Inits
   
-  init(
-    appState: AppState,
-    viewModelFactory: HomeViewModelFactory = ConcreteHomeViewModelFactory()
-  ) {
+  init(appState: AppState) {
     self.appState = appState
-    viewModel = viewModelFactory.create()
+    viewModel = buildViewModel()
   }
   
   // MARK: - Public methods
   
-  func triggerAction(of button: HomeViewModel.ButtonData) {
+  func showSettings() {
     appState.router.push(.settings)
   }
-}
-
-// MARK: - ViewModel factory
-
-private class ConcreteHomeViewModelFactory: HomeViewModelFactory {
-  func create() -> HomeViewModel {
-    .init(
-      buttons: [
-        .init(title: "Start"),
-        .init(title: "Settings")
-      ],
-      particleEffect: Bundle.main.url(
-        forResource: "particle-effect",
-        withExtension: ".mp4"
-      )
-    )
+  
+  func startPlaying() {
+    // TODO: implement
+  }
+  
+  // MARK: - Private methods
+  
+  private func buildViewModel() -> HomeViewModel {
+    .init()
   }
 }
