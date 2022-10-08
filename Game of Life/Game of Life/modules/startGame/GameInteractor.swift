@@ -4,25 +4,26 @@ class GameInteractor: ObservableObject {
   // MARK: - Datasource properties
   
   @Published
-  private(set) var viewModel: GameViewModel
+  private(set) var viewModel: GameViewModel!
   @Published
   private var appState: AppState
   
   // MARK: - Inits
   
-  init(
-    appState: AppState,
-    viewModelFactory: GameViewModelFactory = ConcreteGameViewModelFactory()
-  ) {
+  init(appState: AppState) {
     self.appState = appState
-    viewModel = viewModelFactory.create(appState: appState)
+    viewModel = buildViewModel()
   }
-}
-
-// MARK: - ConcreteGameViewModelFactory
-
-struct ConcreteGameViewModelFactory: GameViewModelFactory {
-  func create(appState: AppState) -> GameViewModel {
+  
+  // MARK: - Public methods
+  
+  func closeGame() {
+    appState.router.pop()
+  }
+  
+  // MARK: - Private methods
+  
+  private func buildViewModel() -> GameViewModel {
     .init(gridSize: appState.settings.gridSize)
   }
 }
