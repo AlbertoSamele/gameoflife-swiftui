@@ -28,7 +28,7 @@ struct GameView: View {
         VStack(spacing: AppAppearance.Spacing.hyperLarger) {
           gameGrid(
             cellSize: cellSize,
-            onCellTap: interactor.toggleTile(row:column:)
+            onCellTap: interactor.toggleCell(row:column:)
           )
           
           ActionButton(
@@ -57,7 +57,9 @@ private extension GameView {
       ForEach(0..<interactor.viewModel.gridSize) { row in
         HStack(spacing: 0) {
           ForEach(0..<interactor.viewModel.gridSize) { column in
-            (interactor.viewModel.populatedTiles.contains(.init(row: row, column: column)) ? selectedTileColor : deselectedTileColor)
+            let isSelected = interactor.viewModel.populatedTiles.contains(.init(row: row, column: column))
+            
+            (isSelected ? selectedTileColor : deselectedTileColor)
               .border(AppAppearance.Colors.color_313031, width: 0.5)
               .frame(width: cellSize, height: cellSize)
               .onTapGesture {

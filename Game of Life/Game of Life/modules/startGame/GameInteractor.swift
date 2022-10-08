@@ -1,7 +1,7 @@
 import Foundation
 
 class GameInteractor: ObservableObject {
-  struct GameTile: Hashable, Equatable {
+  struct GameCell: Hashable, Equatable {
     let row: Int
     let column: Int
   }
@@ -12,7 +12,7 @@ class GameInteractor: ObservableObject {
   private(set) var viewModel: GameViewModel!
   @Published
   private var appState: AppState
-  private var populatedTiles: Set<GameTile> = []
+  private var populatedTiles: Set<GameCell> = []
   
   // MARK: - Inits
   
@@ -27,8 +27,8 @@ class GameInteractor: ObservableObject {
     appState.router.pop()
   }
   
-  func toggleTile(row: Int, column: Int) {
-    let tile = GameTile(row: row, column: column)
+  func toggleCell(row: Int, column: Int) {
+    let tile = GameCell(row: row, column: column)
     if populatedTiles.contains(tile) {
       populatedTiles.remove(tile)
     } else {
