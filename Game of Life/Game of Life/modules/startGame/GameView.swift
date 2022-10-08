@@ -2,9 +2,15 @@ import Foundation
 import SwiftUI
 
 struct GameView: View {
+  // MARK: - UI properties
+  
+  private let selectedTileColor = AppAppearance.Colors.color_313031
+  private let deselectedTileColor = AppAppearance.Colors.color_9a8d9f
+  
   // MARK: - Datasource properties
   
-  let interactor: GameInteractor
+  @ObservedObject
+  var interactor: GameInteractor
   
   // MARK: - Body
   
@@ -20,17 +26,21 @@ struct GameView: View {
         .padding(.top, AppAppearance.Spacing.small)
         
         VStack(spacing: 0) {
-          ForEach(0..<interactor.viewModel.gridSize) { _ in
+          ForEach(0..<interactor.viewModel.gridSize) { row in
             HStack(spacing: 0) {
-              ForEach(0..<interactor.viewModel.gridSize) { _ in
-                AppAppearance.Colors.color_9a8d9f
+              ForEach(0..<interactor.viewModel.gridSize) { column in
+                (interactor.viewModel.populatedTiles.contains(.init(row: row, column: column)) ? selectedTileColor : deselectedTileColor)
                   .border(AppAppearance.Colors.color_313031, width: 0.5)
                   .frame(width: cellSize, height: cellSize)
+                  .onTapGesture {
+                    interactor.toggleTile(row: row, column: column)
+                  }
               }
             }
           }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .drawingGroup()
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
