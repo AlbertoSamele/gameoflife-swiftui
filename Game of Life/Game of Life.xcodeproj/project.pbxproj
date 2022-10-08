@@ -34,6 +34,7 @@
 		3DAB48AE28F22B0C00CB378F /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48AD28F22B0C00CB378F /* ActionButton.swift */; };
 		3DAB48B028F22E8800CB378F /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48AF28F22E8800CB378F /* SliderView.swift */; };
 		3DAB48B228F22EF000CB378F /* SettingsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48B128F22EF000CB378F /* SettingsContent.swift */; };
+		3DAB48B428F2341300CB378F /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48B328F2341300CB378F /* NavBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		3DAB48AD28F22B0C00CB378F /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		3DAB48AF28F22E8800CB378F /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		3DAB48B128F22EF000CB378F /* SettingsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContent.swift; sourceTree = "<group>"; };
+		3DAB48B328F2341300CB378F /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				2126BCBD28D7D012006BE026 /* PlayerView.swift */,
 				3DAB48AD28F22B0C00CB378F /* ActionButton.swift */,
 				3DAB48AF28F22E8800CB378F /* SliderView.swift */,
+				3DAB48B328F2341300CB378F /* NavBar.swift */,
 			);
 			path = genericViews;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DAB48B428F2341300CB378F /* NavBar.swift in Sources */,
 				3DAB48B228F22EF000CB378F /* SettingsContent.swift in Sources */,
 				210FD04928C5420C00BBE052 /* HomeScreenView.swift in Sources */,
 				210FD05128C54C5000BBE052 /* HomeViewModel.swift in Sources */,
