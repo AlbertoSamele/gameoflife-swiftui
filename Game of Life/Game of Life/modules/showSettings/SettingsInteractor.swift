@@ -5,45 +5,43 @@ class SettingsInteractor: ObservableObject {
   
   private let appState: AppState
   @Published
-  var viewModel: SettingsViewModel
+  var viewModel: SettingsViewModel!
   
   // MARK: - Inits
   
-  init(
-    appState: AppState,
-    viewModelFactory: SettingsViewModelFactory = ConcreteSettingsViewModelFactory()
-  ) {
+  init(appState: AppState) {
     self.appState = appState
-    viewModel = viewModelFactory.create(with: appState.settings)
+    viewModel = buildViewModel()
   }
   
+  // MARK: - Public methods
+  
   func closeSettings() {
-    appState.save(
-      settings: .init(
-        gridSize: viewModel.grid.size,
-        speed: viewModel.speed.speed
+    if let viewModel {
+      appState.save(
+        settings: .init(
+          gridSize: viewModel.grid.size,
+          speed: viewModel.speed.speed
+        )
       )
-    )
+    }
+    
     appState.router.pop()
   }
-}
-
-private struct ConcreteSettingsViewModelFactory: SettingsViewModelFactory {
-  func create(with settings: AppState.Settings) -> SettingsViewModel {
+  
+  // MARK: - Private methods
+  
+  private func buildViewModel() -> SettingsViewModel {
     .init(
       grid: .init(
-        size: settings.gridSize,
+        size: appState.settings.gridSize,
         maxSize: 90,
         minSize: 15
       ),
       speed: .init(
-        speed: settings.speed,
+        speed: appState.settings.speed,
         maxSpeed: 10,
         minSpeed: 1
-      ),
-      particleEffect: Bundle.main.url(
-        forResource: "particle-effect",
-        withExtension: ".mp4"
       )
     )
   }
