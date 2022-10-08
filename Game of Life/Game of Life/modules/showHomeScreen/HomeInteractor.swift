@@ -22,7 +22,7 @@ class HomeInteractor: ObservableObject {
   }
   
   func startPlaying() {
-    // TODO: implement
+    appState.router.push(.game)
   }
   
   // MARK: - Private methods

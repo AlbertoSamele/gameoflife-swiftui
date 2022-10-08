@@ -80,7 +80,6 @@ struct RootView: View {
 extension RootView {
   @ViewBuilder
   private func createView(for route: RouteType) -> some View {
-    
     switch route as? Route {
     case .home:
       HomeScreenView(
@@ -94,7 +93,13 @@ extension RootView {
           appState: appState
         )
       )
-    case .none:
+    case .game:
+      GameView(
+        interactor: .init(
+          appState: appState
+        )
+      )
+    default:
       EmptyView()
     }
   }

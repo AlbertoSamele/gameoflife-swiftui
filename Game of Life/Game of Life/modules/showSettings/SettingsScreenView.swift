@@ -19,18 +19,10 @@ struct SettingsScreenView: View {
       )
       .frame(maxWidth: .infinity, maxHeight: .infinity)
       
-      ZStack(alignment: .leading) {
-        Button(action: interactor.closeSettings)  {
-          Image("back-arrow")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .tint(AppAppearance.Colors.color_313031)
-            .frame(width: 22.5, height: 22.5)
-        }
-        Text(interactor.viewModel.content.header)
-          .font(AppAppearance.Fonts.medium_18)
-          .frame(maxWidth: .infinity)
-      }
+      NavBar(
+        onBack: interactor.closeSettings,
+        title: interactor.viewModel.content.header
+      )
       .padding(.horizontal, AppAppearance.Spacing.large)
       .padding(.top, AppAppearance.Spacing.small)
       

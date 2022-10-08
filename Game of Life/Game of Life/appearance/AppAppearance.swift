@@ -7,6 +7,8 @@ struct AppAppearance {
     static let color_ffffff = Color("color_ffffff")
     /// Black equivalent
     static let color_313031 = Color("color_313031")
+    /// Teal
+    static let color_9a8d9f = Color("color_9a8d9f")
   }
   
   struct Fonts {
@@ -39,7 +41,9 @@ struct AppAppearance {
     static let small: CGFloat = 5
     /// 15 pt
     static let medium: CGFloat = 15
-    /// 25 pt
+    /// 20 pt
     static let large: CGFloat = 20
+    /// 40 pt
+    static let hyperLarger: CGFloat = 40
   }
 }

@@ -27,10 +27,15 @@
 		21BEC8B428C6B84F00A94481 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BEC8B328C6B84F00A94481 /* Router.swift */; };
 		21BEC8B728C6BC7B00A94481 /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BEC8B628C6BC7B00A94481 /* SettingsScreenView.swift */; };
 		21BEC8B928C6BCAE00A94481 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BEC8B828C6BCAE00A94481 /* SettingsInteractor.swift */; };
+		21FAAEEF28D9246C00F58B3A /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAAEEE28D9246C00F58B3A /* GameView.swift */; };
+		21FAAEF128D924E700F58B3A /* GameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAAEF028D924E700F58B3A /* GameInteractor.swift */; };
+		21FAAEF528D926AF00F58B3A /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAAEF428D926AF00F58B3A /* GameViewModel.swift */; };
 		3DAB48A928F228CE00CB378F /* HomeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48A828F228CE00CB378F /* HomeContent.swift */; };
 		3DAB48AE28F22B0C00CB378F /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48AD28F22B0C00CB378F /* ActionButton.swift */; };
 		3DAB48B028F22E8800CB378F /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48AF28F22E8800CB378F /* SliderView.swift */; };
 		3DAB48B228F22EF000CB378F /* SettingsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48B128F22EF000CB378F /* SettingsContent.swift */; };
+		3DAB48B428F2341300CB378F /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48B328F2341300CB378F /* NavBar.swift */; };
+		3DAB48B828F23FE000CB378F /* GameContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48B728F23FE000CB378F /* GameContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,10 +60,15 @@
 		21BEC8B328C6B84F00A94481 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		21BEC8B628C6BC7B00A94481 /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
 		21BEC8B828C6BCAE00A94481 /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		21FAAEEE28D9246C00F58B3A /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		21FAAEF028D924E700F58B3A /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
+		21FAAEF428D926AF00F58B3A /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		3DAB48A828F228CE00CB378F /* HomeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContent.swift; sourceTree = "<group>"; };
 		3DAB48AD28F22B0C00CB378F /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		3DAB48AF28F22E8800CB378F /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		3DAB48B128F22EF000CB378F /* SettingsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContent.swift; sourceTree = "<group>"; };
+		3DAB48B328F2341300CB378F /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		3DAB48B728F23FE000CB378F /* GameContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +149,7 @@
 				2126BCBD28D7D012006BE026 /* PlayerView.swift */,
 				3DAB48AD28F22B0C00CB378F /* ActionButton.swift */,
 				3DAB48AF28F22E8800CB378F /* SliderView.swift */,
+				3DAB48B328F2341300CB378F /* NavBar.swift */,
 			);
 			path = genericViews;
 			sourceTree = "<group>";
@@ -180,6 +191,7 @@
 		219240BC28C9195500EFC6B0 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				21FAAEED28D9243C00F58B3A /* startGame */,
 				210FD04728C541C400BBE052 /* showHomeScreen */,
 				21BEC8B528C6BC6400A94481 /* showSettings */,
 			);
@@ -205,6 +217,17 @@
 				3DAB48B128F22EF000CB378F /* SettingsContent.swift */,
 			);
 			path = showSettings;
+			sourceTree = "<group>";
+		};
+		21FAAEED28D9243C00F58B3A /* startGame */ = {
+			isa = PBXGroup;
+			children = (
+				21FAAEEE28D9246C00F58B3A /* GameView.swift */,
+				21FAAEF028D924E700F58B3A /* GameInteractor.swift */,
+				21FAAEF428D926AF00F58B3A /* GameViewModel.swift */,
+				3DAB48B728F23FE000CB378F /* GameContent.swift */,
+			);
+			path = startGame;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,13 +301,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DAB48B428F2341300CB378F /* NavBar.swift in Sources */,
 				3DAB48B228F22EF000CB378F /* SettingsContent.swift in Sources */,
 				210FD04928C5420C00BBE052 /* HomeScreenView.swift in Sources */,
 				210FD05128C54C5000BBE052 /* HomeViewModel.swift in Sources */,
+				21FAAEF128D924E700F58B3A /* GameInteractor.swift in Sources */,
+				21FAAEEF28D9246C00F58B3A /* GameView.swift in Sources */,
 				21BEC8B428C6B84F00A94481 /* Router.swift in Sources */,
 				210FD03C28C538BA00BBE052 /* RootView.swift in Sources */,
 				2126BCBE28D7D012006BE026 /* PlayerView.swift in Sources */,
 				21BEC8B228C6B25000A94481 /* AppState.swift in Sources */,
+				21FAAEF528D926AF00F58B3A /* GameViewModel.swift in Sources */,
 				219240B528C9057700EFC6B0 /* Navigation.swift in Sources */,
 				21BEC8B928C6BCAE00A94481 /* SettingsInteractor.swift in Sources */,
 				219240B928C917C400EFC6B0 /* Router+AppRouter.swift in Sources */,
@@ -293,6 +320,7 @@
 				3DAB48AE28F22B0C00CB378F /* ActionButton.swift in Sources */,
 				210FD05828C5557C00BBE052 /* StaticButtonStyle.swift in Sources */,
 				210FD03A28C538BA00BBE052 /* Game_of_LifeApp.swift in Sources */,
+				3DAB48B828F23FE000CB378F /* GameContent.swift in Sources */,
 				2159158628CFDEE9007EA08B /* AppState+Settings.swift in Sources */,
 				210FD04F28C54C1E00BBE052 /* HomeInteractor.swift in Sources */,
 				3DAB48A928F228CE00CB378F /* HomeContent.swift in Sources */,
