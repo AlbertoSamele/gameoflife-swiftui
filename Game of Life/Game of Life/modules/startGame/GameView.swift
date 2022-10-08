@@ -11,7 +11,14 @@ struct GameView: View {
   var body: some View {
     GeometryReader { proxy in
       let cellSize = proxy.size.width / Double(interactor.viewModel.gridSize)
-      ZStack {
+      ZStack(alignment: .top) {
+        NavBar(
+          onBack: interactor.closeGame,
+          title: nil
+        )
+        .padding(.horizontal, AppAppearance.Spacing.large)
+        .padding(.top, AppAppearance.Spacing.small)
+        
         VStack(spacing: 0) {
           ForEach(0..<interactor.viewModel.gridSize) { _ in
             HStack(spacing: 0) {
@@ -23,7 +30,7 @@ struct GameView: View {
             }
           }
         }
-        
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

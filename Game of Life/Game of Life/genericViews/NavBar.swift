@@ -8,7 +8,7 @@ struct NavBar: View {
   
   // MARK: - Datasource properties
   
-  let title: String
+  let title: String?
   
   // MARK: - Body
   
@@ -21,7 +21,7 @@ struct NavBar: View {
           .tint(AppAppearance.Colors.color_313031)
           .frame(width: 22.5, height: 22.5)
       }
-      Text(title)
+      Text(title ?? "")
         .font(AppAppearance.Fonts.medium_18)
         .frame(maxWidth: .infinity)
     }
