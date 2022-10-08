@@ -23,8 +23,8 @@ struct GameView: View {
           ForEach(0..<interactor.viewModel.gridSize) { _ in
             HStack(spacing: 0) {
               ForEach(0..<interactor.viewModel.gridSize) { _ in
-                Color.green
-                  .border(AppAppearance.Colors.color_313031, width: 2)
+                AppAppearance.Colors.color_9a8d9f
+                  .border(AppAppearance.Colors.color_313031, width: 0.5)
                   .frame(width: cellSize, height: cellSize)
               }
             }

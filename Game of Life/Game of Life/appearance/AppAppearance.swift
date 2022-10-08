@@ -7,6 +7,8 @@ struct AppAppearance {
     static let color_ffffff = Color("color_ffffff")
     /// Black equivalent
     static let color_313031 = Color("color_313031")
+    /// Teal
+    static let color_9a8d9f = Color("color_9a8d9f")
   }
   
   struct Fonts {
