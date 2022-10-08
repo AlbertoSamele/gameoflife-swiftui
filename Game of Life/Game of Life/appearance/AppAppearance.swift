@@ -41,7 +41,9 @@ struct AppAppearance {
     static let small: CGFloat = 5
     /// 15 pt
     static let medium: CGFloat = 15
-    /// 25 pt
+    /// 20 pt
     static let large: CGFloat = 20
+    /// 40 pt
+    static let hyperLarger: CGFloat = 40
   }
 }

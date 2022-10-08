@@ -38,6 +38,22 @@ class GameInteractor: ObservableObject {
     viewModel = buildViewModel()
   }
   
+  func randomPopulate() {
+    populatedTiles = []
+    
+    let gridSize = appState.settings.gridSize
+    let numberOfCells = gridSize * gridSize
+    let numberOfPopulatedCells = Int.random(in: 1...numberOfCells)
+    
+    for _ in 0..<numberOfPopulatedCells {
+      let row = Int.random(in: 0..<gridSize)
+      let column = Int.random(in: 0..<gridSize)
+      populatedTiles.insert(.init(row: row, column: column))
+    }
+    
+    viewModel = buildViewModel()
+  }
+  
   // MARK: - Private methods
   
   private func buildViewModel() -> GameViewModel {
