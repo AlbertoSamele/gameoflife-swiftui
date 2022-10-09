@@ -36,6 +36,7 @@
 		3DAB48B228F22EF000CB378F /* SettingsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48B128F22EF000CB378F /* SettingsContent.swift */; };
 		3DAB48B428F2341300CB378F /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48B328F2341300CB378F /* NavBar.swift */; };
 		3DAB48B828F23FE000CB378F /* GameContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48B728F23FE000CB378F /* GameContent.swift */; };
+		4FFBF8BB620011DAA8AFB48D /* Pods_Game_of_Life.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B6446B0725ECB4CE634B8E /* Pods_Game_of_Life.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,9 @@
 		3DAB48B128F22EF000CB378F /* SettingsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContent.swift; sourceTree = "<group>"; };
 		3DAB48B328F2341300CB378F /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		3DAB48B728F23FE000CB378F /* GameContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContent.swift; sourceTree = "<group>"; };
+		6E5493EE548327A0769296DF /* Pods-Game of Life.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game of Life.release.xcconfig"; path = "Target Support Files/Pods-Game of Life/Pods-Game of Life.release.xcconfig"; sourceTree = "<group>"; };
+		8E9045DF1CFFA6FDA777179D /* Pods-Game of Life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game of Life.debug.xcconfig"; path = "Target Support Files/Pods-Game of Life/Pods-Game of Life.debug.xcconfig"; sourceTree = "<group>"; };
+		B1B6446B0725ECB4CE634B8E /* Pods_Game_of_Life.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Game_of_Life.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FFBF8BB620011DAA8AFB48D /* Pods_Game_of_Life.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +92,8 @@
 			children = (
 				210FD03828C538BA00BBE052 /* Game of Life */,
 				210FD03728C538BA00BBE052 /* Products */,
+				651F0483B0489C5CA784B4C6 /* Pods */,
+				5E687A587F068A114B941945 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,6 +237,24 @@
 			path = startGame;
 			sourceTree = "<group>";
 		};
+		5E687A587F068A114B941945 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1B6446B0725ECB4CE634B8E /* Pods_Game_of_Life.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		651F0483B0489C5CA784B4C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E9045DF1CFFA6FDA777179D /* Pods-Game of Life.debug.xcconfig */,
+				6E5493EE548327A0769296DF /* Pods-Game of Life.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,9 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 210FD04428C538BA00BBE052 /* Build configuration list for PBXNativeTarget "Game of Life" */;
 			buildPhases = (
+				F6E05DC7AD1703C1E192703E /* [CP] Check Pods Manifest.lock */,
 				210FD03228C538BA00BBE052 /* Sources */,
 				210FD03328C538BA00BBE052 /* Frameworks */,
 				210FD03428C538BA00BBE052 /* Resources */,
+				99097DC254F0A4BE34BC20EB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -295,6 +322,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		99097DC254F0A4BE34BC20EB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Game of Life/Pods-Game of Life-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Game of Life/Pods-Game of Life-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Game of Life/Pods-Game of Life-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6E05DC7AD1703C1E192703E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Game of Life-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		210FD03228C538BA00BBE052 /* Sources */ = {
@@ -449,6 +518,7 @@
 		};
 		210FD04528C538BA00BBE052 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E9045DF1CFFA6FDA777179D /* Pods-Game of Life.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -478,6 +548,7 @@
 		};
 		210FD04628C538BA00BBE052 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E5493EE548327A0769296DF /* Pods-Game of Life.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

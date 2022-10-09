@@ -11,6 +11,8 @@ struct GameView: View {
   
   @ObservedObject
   var interactor: GameInteractor
+  @State
+  private var canRenderGameGrid = false
   
   // MARK: - Body
   
@@ -26,21 +28,32 @@ struct GameView: View {
         .padding(.top, AppAppearance.Spacing.small)
         
         VStack(spacing: AppAppearance.Spacing.hyperLarger) {
-          gameGrid(
-            cellSize: cellSize,
-            onCellTap: interactor.toggleCell(row:column:)
-          )
-          
-          ActionButton(
-            title: interactor.viewModel.content.randomPopulatePrompt,
-            onTap: interactor.randomPopulate
-          )
-          .frame(width: 160, height: 40)
+          if canRenderGameGrid {
+            gameGrid(
+              cellSize: cellSize,
+              onCellTap: interactor.toggleCell(row:column:)
+            )
+            
+            ActionButton(
+              title: interactor.viewModel.content.randomPopulatePrompt,
+              onTap: interactor.randomPopulate
+            )
+            .frame(width: 160, height: 40)
+          } else {
+            ProgressView()
+              .progressViewStyle(.circular)
+              .tint(AppAppearance.Colors.color_313031)
+          }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .drawingGroup()
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity)
+      .onAppear {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+          self.canRenderGameGrid = true
+        }
+      }
     }
   }
 }
