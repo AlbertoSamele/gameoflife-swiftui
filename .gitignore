@@ -91,3 +91,4 @@ iOSInjectionProject/
 contents.xcworkspacedata
 Game of Life/Pods/
 Game of Life/*.xcworkspace
+.DS_Store

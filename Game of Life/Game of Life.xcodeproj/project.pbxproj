@@ -30,6 +30,7 @@
 		21FAAEEF28D9246C00F58B3A /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAAEEE28D9246C00F58B3A /* GameView.swift */; };
 		21FAAEF128D924E700F58B3A /* GameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAAEF028D924E700F58B3A /* GameInteractor.swift */; };
 		21FAAEF528D926AF00F58B3A /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAAEF428D926AF00F58B3A /* GameViewModel.swift */; };
+		3D5C5D3828F24C74003E1BAF /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D5C5D3728F24C74003E1BAF /* loader.json */; };
 		3DAB48A928F228CE00CB378F /* HomeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48A828F228CE00CB378F /* HomeContent.swift */; };
 		3DAB48AE28F22B0C00CB378F /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48AD28F22B0C00CB378F /* ActionButton.swift */; };
 		3DAB48B028F22E8800CB378F /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48AF28F22E8800CB378F /* SliderView.swift */; };
@@ -64,6 +65,7 @@
 		21FAAEEE28D9246C00F58B3A /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		21FAAEF028D924E700F58B3A /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
 		21FAAEF428D926AF00F58B3A /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		3D5C5D3728F24C74003E1BAF /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
 		3DAB48A828F228CE00CB378F /* HomeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContent.swift; sourceTree = "<group>"; };
 		3DAB48AD28F22B0C00CB378F /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		3DAB48AF28F22E8800CB378F /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		2126BCBA28D7CA3F006BE026 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				3D5C5D3728F24C74003E1BAF /* loader.json */,
 				2126BCBB28D7CA4E006BE026 /* particle-effect.mp4 */,
 			);
 			path = assets;
@@ -251,7 +254,6 @@
 				8E9045DF1CFFA6FDA777179D /* Pods-Game of Life.debug.xcconfig */,
 				6E5493EE548327A0769296DF /* Pods-Game of Life.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -317,6 +319,7 @@
 			files = (
 				2126BCBC28D7CA4E006BE026 /* particle-effect.mp4 in Resources */,
 				210FD04128C538BA00BBE052 /* Preview Assets.xcassets in Resources */,
+				3D5C5D3828F24C74003E1BAF /* loader.json in Resources */,
 				210FD03E28C538BA00BBE052 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
