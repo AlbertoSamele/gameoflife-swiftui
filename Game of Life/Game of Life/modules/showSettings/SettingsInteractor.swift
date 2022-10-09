@@ -35,7 +35,7 @@ class SettingsInteractor: ObservableObject {
     .init(
       grid: .init(
         size: appState.settings.gridSize,
-        maxSize: 90,
+        maxSize: 100,
         minSize: 15
       ),
       speed: .init(

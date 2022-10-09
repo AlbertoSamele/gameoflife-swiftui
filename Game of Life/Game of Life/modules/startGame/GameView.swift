@@ -29,9 +29,7 @@ struct GameView: View {
         .padding(.horizontal, AppAppearance.Spacing.large)
         .padding(.top, AppAppearance.Spacing.small)
         
-        VStack(
-          spacing: AppAppearance.Spacing.hyperLarger
-        ) {
+        VStack(spacing: AppAppearance.Spacing.hyperLarger) {
           if canRenderGameGrid {
             gameGrid(
               cellSize: cellSize,
@@ -39,11 +37,19 @@ struct GameView: View {
             )
             .drawingGroup()
             
-            ActionButton(
-              title: interactor.viewModel.content.randomPopulatePrompt,
-              onTap: interactor.randomPopulate
-            )
-            .frame(width: 160, height: 40)
+            VStack {
+              ActionButton(
+                title: interactor.viewModel.content.randomPopulatePrompt,
+                onTap: interactor.randomPopulate
+              )
+              .frame(width: 160, height: 40)
+              
+              ActionButton(
+                title: interactor.viewModel.content.playPrompt,
+                onTap: interactor.play
+              )
+              .frame(width: 160, height: 40)
+            }
           } else {
             loader(title: loaderContent ?? "")
             .frame(maxWidth: .infinity, maxHeight: .infinity)
