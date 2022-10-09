@@ -5,7 +5,7 @@ struct GameView: View {
   // MARK: - UI properties
   
   private let selectedTileColor = AppAppearance.Colors.color_313031
-  private let deselectedTileColor = AppAppearance.Colors.color_9a8d9f
+  private let deselectedTileColor = AppAppearance.Colors.color_ffffff
   
   // MARK: - Datasource properties
   
@@ -13,6 +13,8 @@ struct GameView: View {
   var interactor: GameInteractor
   @State
   private var canRenderGameGrid = false
+  @State
+  private var loaderContent: String?
   
   // MARK: - Body
   
@@ -21,18 +23,21 @@ struct GameView: View {
       let cellSize = proxy.size.width / Double(interactor.viewModel.gridSize)
       ZStack(alignment: .top) {
         NavBar(
-          onBack: interactor.closeGame,
+          onBack: onBackArrowTapped,
           title: nil
         )
         .padding(.horizontal, AppAppearance.Spacing.large)
         .padding(.top, AppAppearance.Spacing.small)
         
-        VStack(spacing: AppAppearance.Spacing.hyperLarger) {
+        VStack(
+          spacing: AppAppearance.Spacing.hyperLarger
+        ) {
           if canRenderGameGrid {
             gameGrid(
               cellSize: cellSize,
               onCellTap: interactor.toggleCell(row:column:)
             )
+            .drawingGroup()
             
             ActionButton(
               title: interactor.viewModel.content.randomPopulatePrompt,
@@ -40,20 +45,29 @@ struct GameView: View {
             )
             .frame(width: 160, height: 40)
           } else {
-            ProgressView()
-              .progressViewStyle(.circular)
-              .tint(AppAppearance.Colors.color_313031)
+            loader(title: loaderContent ?? "")
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
           }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .drawingGroup()
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity)
       .onAppear {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        loaderContent = interactor.viewModel.content.setupWarning
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
           self.canRenderGameGrid = true
         }
       }
+    }
+  }
+  
+  // MARK: - Private methods
+  
+  private func onBackArrowTapped() {
+    loaderContent = interactor.viewModel.content.teardownWarning
+    self.canRenderGameGrid = false
+    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+      self.interactor.closeGame()
     }
   }
 }
@@ -81,6 +95,22 @@ private extension GameView {
           }
         }
       }
+    }
+  }
+  
+  @ViewBuilder
+  func loader(title: String) -> some View {
+    let lottieSize: CGFloat = 100
+    
+    VStack(spacing: AppAppearance.Spacing.extraLarge) {
+      LottieAnimationView(
+        isLoading: .constant(true),
+        size: .init(width: lottieSize, height: lottieSize)
+      )
+        .frame(width: lottieSize, height: lottieSize)
+      Text(title)
+        .font(AppAppearance.Fonts.light_13)
+        .foregroundColor(AppAppearance.Colors.color_313031)
     }
   }
 }

@@ -31,6 +31,7 @@
 		21FAAEF128D924E700F58B3A /* GameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAAEF028D924E700F58B3A /* GameInteractor.swift */; };
 		21FAAEF528D926AF00F58B3A /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAAEF428D926AF00F58B3A /* GameViewModel.swift */; };
 		3D5C5D3828F24C74003E1BAF /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D5C5D3728F24C74003E1BAF /* loader.json */; };
+		3D5C5D3A28F24CB3003E1BAF /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5C5D3928F24CB3003E1BAF /* LoaderView.swift */; };
 		3DAB48A928F228CE00CB378F /* HomeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48A828F228CE00CB378F /* HomeContent.swift */; };
 		3DAB48AE28F22B0C00CB378F /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48AD28F22B0C00CB378F /* ActionButton.swift */; };
 		3DAB48B028F22E8800CB378F /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB48AF28F22E8800CB378F /* SliderView.swift */; };
@@ -66,6 +67,7 @@
 		21FAAEF028D924E700F58B3A /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
 		21FAAEF428D926AF00F58B3A /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		3D5C5D3728F24C74003E1BAF /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
+		3D5C5D3928F24CB3003E1BAF /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		3DAB48A828F228CE00CB378F /* HomeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContent.swift; sourceTree = "<group>"; };
 		3DAB48AD28F22B0C00CB378F /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		3DAB48AF28F22E8800CB378F /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				3DAB48AD28F22B0C00CB378F /* ActionButton.swift */,
 				3DAB48AF28F22E8800CB378F /* SliderView.swift */,
 				3DAB48B328F2341300CB378F /* NavBar.swift */,
+				3D5C5D3928F24CB3003E1BAF /* LoaderView.swift */,
 			);
 			path = genericViews;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				3DAB48B028F22E8800CB378F /* SliderView.swift in Sources */,
 				21BEC8B728C6BC7B00A94481 /* SettingsScreenView.swift in Sources */,
 				3DAB48AE28F22B0C00CB378F /* ActionButton.swift in Sources */,
+				3D5C5D3A28F24CB3003E1BAF /* LoaderView.swift in Sources */,
 				210FD05828C5557C00BBE052 /* StaticButtonStyle.swift in Sources */,
 				210FD03A28C538BA00BBE052 /* Game_of_LifeApp.swift in Sources */,
 				3DAB48B828F23FE000CB378F /* GameContent.swift in Sources */,
