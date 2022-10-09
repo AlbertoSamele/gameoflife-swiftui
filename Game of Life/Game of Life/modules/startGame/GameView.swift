@@ -11,6 +11,10 @@ struct GameView: View {
   
   @ObservedObject
   var interactor: GameInteractor
+  @GestureState
+  private var gridDragLocation: CGPoint = .zero
+  @State
+  private var lastHighlightedDragCell: (row: Int, column: Int)?
   @State
   private var canRenderGameGrid = false
   @State
@@ -38,6 +42,11 @@ struct GameView: View {
               onCellTap: interactor.toggleCell(row:column:)
             )
             .drawingGroup()
+            .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .global)
+              .updating($gridDragLocation) { value, state, _ in
+                state = value.location
+              }
+            )
             
             ActionButton(
               title: interactor.viewModel.content.randomPopulatePrompt,
@@ -92,9 +101,25 @@ private extension GameView {
               .onTapGesture {
                 onCellTap(row, column)
               }
+              .background(cellDragReader(row: row, column: column))
           }
         }
       }
+    }
+  }
+  
+  @ViewBuilder
+  func cellDragReader(row: Int, column: Int) -> some View {
+    GeometryReader { (geometry) -> AnyView in
+      if geometry.frame(in: .global).contains(gridDragLocation),
+         (row != lastHighlightedDragCell?.row || column != lastHighlightedDragCell?.column)
+      {
+        DispatchQueue.main.async {
+          self.lastHighlightedDragCell = (row: row, column: column)
+          self.interactor.toggleCell(row: row, column: column)
+        }
+      }
+      return AnyView(EmptyView())
     }
   }
   
