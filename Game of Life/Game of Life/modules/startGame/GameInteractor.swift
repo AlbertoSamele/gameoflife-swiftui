@@ -19,7 +19,9 @@ class GameInteractor: ObservableObject {
   @Published
   private var appState: AppState
   private var populatedCells: Set<GameCell> = []
+  private var previousGameSetup: Set<GameCell> = []
   private var emptyCells: Set<GameCell> = []
+  private var isPlaying = false
   
   // MARK: - Inits
   
@@ -35,6 +37,52 @@ class GameInteractor: ObservableObject {
     appState.router.pop()
   }
   
+  func play() {
+    guard !isPlaying else {
+      return
+    }
+    
+    initializeEmptyCells()
+    previousGameSetup = populatedCells
+    isPlaying = true
+    
+    gameTurnMaker = Timer.scheduledTimer(withTimeInterval: turnSecondsLength, repeats: true) { _ in
+      self.gameQueue.async { [weak self] in
+        self?.takeTurn()
+      }
+    }
+  }
+  
+  func clear() {
+    guard !isPlaying else {
+      return
+    }
+    
+    initializeEmptyCells()
+    previousGameSetup = []
+    populatedCells = []
+    emptyCells = []
+    
+    viewModel = buildViewModel()
+  }
+  
+  func reset() {
+    gameTurnMaker?.invalidate()
+    isPlaying = false
+    self.gameQueue.async { [weak self] in
+      guard let self = self else {
+        return
+      }
+      
+      self.populatedCells = self.previousGameSetup
+      self.emptyCells = []
+      
+      DispatchQueue.main.async {
+        self.viewModel = self.buildViewModel()
+      }
+    }
+  }
+  
   func toggleCell(row: Int, column: Int) {
     let tile = GameCell(row: row, column: column)
     if populatedCells.contains(tile) {
@@ -47,6 +95,10 @@ class GameInteractor: ObservableObject {
   }
   
   func randomPopulate() {
+    guard !isPlaying else {
+      return
+    }
+    
     populatedCells = []
     
     let gridSize = appState.settings.gridSize
@@ -60,15 +112,6 @@ class GameInteractor: ObservableObject {
     }
     
     viewModel = buildViewModel()
-  }
-  
-  func play() {
-    initializeEmptyCells()
-    gameTurnMaker = Timer.scheduledTimer(withTimeInterval: turnSecondsLength, repeats: true) { _ in
-      self.gameQueue.async { [weak self] in
-        self?.takeTurn()
-      }
-    }
   }
   
   // MARK: - Private methods
@@ -121,7 +164,8 @@ class GameInteractor: ObservableObject {
   private func buildViewModel() -> GameViewModel {
     .init(
       gridSize: appState.settings.gridSize,
-      populatedTiles: populatedCells
+      populatedTiles: populatedCells,
+      isPlaying: isPlaying
     )
   }
 }
