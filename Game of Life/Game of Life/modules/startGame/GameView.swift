@@ -25,6 +25,7 @@ struct GameView: View {
   var body: some View {
     GeometryReader { proxy in
       let cellSize = proxy.size.width / Double(interactor.viewModel.gridSize)
+      
       ZStack(alignment: .top) {
         NavBar(
           onBack: onBackArrowTapped,
@@ -33,10 +34,8 @@ struct GameView: View {
         .padding(.horizontal, AppAppearance.Spacing.large)
         .padding(.top, AppAppearance.Spacing.small)
         
-        VStack(
-          spacing: AppAppearance.Spacing.hyperLarger
-        ) {
-          if canRenderGameGrid {
+        if canRenderGameGrid {
+          VStack(spacing: AppAppearance.Spacing.hyperLarger) {
             gameGrid(
               cellSize: cellSize,
               onCellTap: interactor.toggleCell(row:column:)
@@ -48,17 +47,36 @@ struct GameView: View {
               }
             )
             
-            ActionButton(
-              title: interactor.viewModel.content.randomPopulatePrompt,
-              onTap: interactor.randomPopulate
-            )
-            .frame(width: 160, height: 40)
-          } else {
-            loader(title: loaderContent ?? "")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            VStack {
+              ActionButton(
+                title: interactor.viewModel.isPlaying ?
+                interactor.viewModel.content.resetPrompt : interactor.viewModel.content.randomPopulatePrompt,
+                onTap: interactor.viewModel.isPlaying ? interactor.reset : interactor.randomPopulate
+              )
+              .frame(width: 160, height: 40)
+              
+              ActionButton(
+                title: interactor.viewModel.content.clearPrompt,
+                onTap: interactor.clear
+              )
+              .frame(width: 160, height: 40)
+              .opacity(interactor.viewModel.isPlaying ? 0 : 1)
+              
+              ActionButton(
+                title: interactor.viewModel.content.playPrompt,
+                onTap: interactor.play
+              )
+              .frame(width: 160, height: 40)
+              .opacity(interactor.viewModel.isPlaying ? 0 : 1)
+            }
           }
+          .frame(maxWidth: .infinity, maxHeight: .infinity)
+          
+        } else {
+          loader(title: loaderContent ?? "")
+            .offset(y: -AppAppearance.Spacing.extraLarge)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity)
       .onAppear {
